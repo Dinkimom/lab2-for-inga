@@ -34,7 +34,7 @@ export const Users: React.FC = () => {
 
           <Form.Item
             label="Phone"
-            name="Phone"
+            name="phone"
             rules={[
               { required: true, message: 'Please input your phone!' },
               { pattern: phoneRegex, message: 'Input valid phone number' },

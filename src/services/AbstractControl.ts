@@ -30,11 +30,7 @@ export class AbstractControl<T> {
   };
 
   public update = (data: any) => {
-    const { id } = data;
-
-    delete data.id;
-
-    return this.axios.put('/' + id, data);
+    return this.axios.put('/', data);
   };
 
   public remove = (id: string) => {

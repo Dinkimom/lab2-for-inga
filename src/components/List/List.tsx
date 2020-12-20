@@ -59,6 +59,7 @@ export const List: React.FC<Props> = ({
   const dispatch = useDispatch();
 
   const formRef: any = createRef();
+  const filterRef: any = createRef();
 
   useEffect(() => {
     if (!filter) {
@@ -74,7 +75,7 @@ export const List: React.FC<Props> = ({
 
       return formRef.current.resetFields();
     }
-  }, [formRef, formData]);
+  }, [formRef, opened]);
 
   const handleFetchList = (filter?: Filter) => {
     dispatch(thunks.fetchList(filter));
@@ -82,10 +83,20 @@ export const List: React.FC<Props> = ({
 
   const handleModalSubmit = (data: any) => {
     if (data.id) {
-      return dispatch(thunks.update(data));
+      return dispatch(
+        thunks.update(
+          data,
+          filter ? filterRef.current.getFieldsValue() : undefined
+        )
+      );
     }
 
-    dispatch(thunks.create(data));
+    dispatch(
+      thunks.create(
+        data,
+        filter ? filterRef.current.getFieldsValue() : undefined
+      )
+    );
   };
 
   const handleModalToggle = (data: null | any) => {
@@ -171,6 +182,7 @@ export const List: React.FC<Props> = ({
               layout="horizontal"
               style={{ display: 'flex' }}
               onFinish={(data) => handleFetchList(data)}
+              ref={filterRef}
             >
               {filter}
 
