@@ -2,6 +2,7 @@ import { Form, Input, Select } from 'antd';
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { List } from '../../components/List/List';
+import { CardTypeEnum } from '../../enums/CardTypeEnum';
 import { EntityEnum } from '../../enums/EntityEnum';
 import { usersThunk } from '../users/usersSlice';
 
@@ -52,6 +53,16 @@ export const Catalog: React.FC = () => {
           </Form.Item>
           <Form.Item label="Book" name="bookId" hidden style={{ width: 200 }}>
             <Input />
+          </Form.Item>
+          <Form.Item
+            label="User"
+            name="userId"
+            initialValue={CardTypeEnum.Card}
+          >
+            <Select>
+              <Option value={CardTypeEnum.Card}>{CardTypeEnum.Card}</Option>
+              <Option value={CardTypeEnum.Reserved}>{CardTypeEnum.Card}</Option>
+            </Select>
           </Form.Item>
           <Form.Item
             label="User"
