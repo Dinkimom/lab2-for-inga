@@ -148,8 +148,6 @@ export const createListSlice = <T>(
 
       await control.remove(data);
 
-      dispatch(fetchList());
-
       notification.success({
         message: 'Item successfully removed!',
       });

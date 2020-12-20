@@ -105,7 +105,12 @@ export const List: React.FC<Props> = ({
 
   const handleItemRemove = (data: any) => {
     if (window.confirm('Would you like to remove item?')) {
-      return dispatch(thunks.remove(data.id));
+      return dispatch(
+        thunks.remove(
+          data.id,
+          filter ? filterRef.current.getFieldsValue() : undefined
+        )
+      );
     }
 
     return null;
