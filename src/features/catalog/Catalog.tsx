@@ -54,14 +54,10 @@ export const Catalog: React.FC = () => {
           <Form.Item label="Book" name="bookId" hidden style={{ width: 200 }}>
             <Input />
           </Form.Item>
-          <Form.Item
-            label="User"
-            name="userId"
-            initialValue={CardTypeEnum.Card}
-          >
+          <Form.Item label="Type" name="type" initialValue={CardTypeEnum.Card}>
             <Select>
-              <Option value={CardTypeEnum.Card}>{CardTypeEnum.Card}</Option>
-              <Option value={CardTypeEnum.Reserved}>{CardTypeEnum.Card}</Option>
+              <Option value={CardTypeEnum.Card}>Card</Option>
+              <Option value={CardTypeEnum.Reserved}>Reserved</Option>
             </Select>
           </Form.Item>
           <Form.Item
