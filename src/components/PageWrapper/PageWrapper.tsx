@@ -39,7 +39,7 @@ export const PageWrapper: React.FC<Props> = ({ children }) => {
         <Container>{children}</Container>
       </Content>
       <Footer className={styles.footer}>
-        <Container>Created by Inga Volisnikova</Container>
+        <Container>Created by Inga Volosnikova</Container>
       </Footer>
     </Layout>
   );
