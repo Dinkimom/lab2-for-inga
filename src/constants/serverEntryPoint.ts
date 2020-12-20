@@ -1,1 +1,1 @@
-export const serverEntryPoint = 'https://localhost:44346/';
+export const serverEntryPoint = 'https://localhost:44346';
