@@ -33,12 +33,7 @@ export const Catalog: React.FC = () => {
             <Input />
           </Form.Item>
 
-          <Form.Item
-            name="title"
-            label="Title"
-            style={{ margin: 0 }}
-            rules={[{ required: true, message: 'Please input a title!' }]}
-          >
+          <Form.Item name="title" label="Title" style={{ margin: 0 }}>
             <Input />
           </Form.Item>
         </>

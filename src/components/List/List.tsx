@@ -75,7 +75,7 @@ export const List: React.FC<Props> = ({
 
       return formRef.current.resetFields();
     }
-  }, [formRef, opened]);
+  }, [opened]);
 
   const handleFetchList = (filter?: Filter) => {
     dispatch(thunks.fetchList(filter));
