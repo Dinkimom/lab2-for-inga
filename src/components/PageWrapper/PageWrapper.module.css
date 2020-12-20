@@ -1,0 +1,42 @@
+.layout {
+  min-height: 100vh;
+}
+
+.header {
+  position: fixed;
+  z-index: 1;
+  font-size: 1.2rem;
+  width: 100%;
+}
+
+.headerContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.activeLink {
+  color: white;
+}
+
+.activeLink:hover {
+  color: white;
+}
+
+.userButton {
+  margin-left: 32px;
+}
+
+.content {
+  padding: 0 50px;
+  margin-top: 84px;
+  min-height: calc(100vh - 128px);
+}
+
+.footer {
+  height: 64px;
+  text-align: center;
+
+  width: 100%;
+}
