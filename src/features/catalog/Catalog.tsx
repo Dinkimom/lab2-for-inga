@@ -49,13 +49,18 @@ export const Catalog: React.FC = () => {
       modalFormFields={
         <>
           <Form.Item label="Title" name="title" style={{ width: 200 }}>
-            <Input readOnly />
+            <Input readOnly bordered={false} />
           </Form.Item>
           <Form.Item label="Book" name="bookId" hidden style={{ width: 200 }}>
             <Input />
           </Form.Item>
-          <Form.Item label="Type" name="type" initialValue={CardTypeEnum.Card}>
-            <Select>
+          <Form.Item
+            label="Type"
+            name="type"
+            initialValue={CardTypeEnum.Card}
+            rules={[{ required: true, message: 'Please choose a type!' }]}
+          >
+            <Select style={{ width: 200 }}>
               <Option value={CardTypeEnum.Card}>Card</Option>
               <Option value={CardTypeEnum.Reserved}>Reserved</Option>
             </Select>
