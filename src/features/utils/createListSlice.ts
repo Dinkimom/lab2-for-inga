@@ -94,7 +94,9 @@ export const createListSlice = <T>(
     }
   };
 
-  const create = (data: newDto<T>): AppThunk => async (dispatch) => {
+  const create = (data: newDto<T>, filter?: Filter): AppThunk => async (
+    dispatch
+  ) => {
     try {
       dispatch(submitModalStart());
 
@@ -106,7 +108,7 @@ export const createListSlice = <T>(
         message: 'Item successfully created!',
       });
 
-      dispatch(fetchList());
+      dispatch(fetchList(filter));
     } catch ({ message }) {
       dispatch(submitModalError());
 
@@ -116,7 +118,7 @@ export const createListSlice = <T>(
     }
   };
 
-  const update = (data: T): AppThunk => async (dispatch) => {
+  const update = (data: T, filter?: Filter): AppThunk => async (dispatch) => {
     try {
       dispatch(submitModalStart());
 
@@ -128,7 +130,7 @@ export const createListSlice = <T>(
         message: 'Item successfully updated!',
       });
 
-      dispatch(fetchList());
+      dispatch(fetchList(filter));
     } catch ({ message }) {
       dispatch(submitModalError());
 
@@ -138,7 +140,9 @@ export const createListSlice = <T>(
     }
   };
 
-  const remove = (data: string): AppThunk => async (dispatch) => {
+  const remove = (data: string, filter: Filter): AppThunk => async (
+    dispatch
+  ) => {
     try {
       dispatch(fetchStart());
 
@@ -150,7 +154,7 @@ export const createListSlice = <T>(
         message: 'Item successfully removed!',
       });
 
-      dispatch(fetchList());
+      dispatch(fetchList(filter));
     } catch ({ message }) {
       dispatch(fetchError(message));
     }
